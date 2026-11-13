@@ -198,12 +198,12 @@ export async function executeSuggestIndex(
   for (const stat of columnStats) {
     if (stat.nullFrac !== null && stat.nullFrac >= 0.7) {
       notes.push(
-        `Column "${stat.columnName}" is ${(stat.nullFrac * 100).toFixed(0)}% NULL — consider a partial index (WHERE ${stat.columnName} IS NOT NULL).`,
+        `Column "${stat.columnName}" is ${(stat.nullFrac * 100).toFixed(0)}% NULL; consider a partial index (WHERE ${stat.columnName} IS NOT NULL).`,
       );
     }
     if (stat.dataType === 'jsonb' && indexType === 'btree') {
       notes.push(
-        `Column "${stat.columnName}" is jsonb — consider index_type: "gin" for containment (@>) queries.`,
+        `Column "${stat.columnName}" is jsonb; consider index_type: "gin" for containment (@>) queries.`,
       );
     }
   }
