@@ -1,0 +1,40 @@
+{
+  "name": "pg-auditor-mcp",
+  "version": "0.1.0",
+  "description": "Read-only Model Context Protocol (MCP) server for PostgreSQL query performance auditing, EXPLAIN ANALYZE diagnostics, and missing index detection.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "pg-auditor-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "postgresql",
+    "postgres",
+    "performance",
+    "indexes",
+    "explain-analyze",
+    "dba"
+  ],
+  "author": "Franco Girala",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "pg": "^8.14.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}
