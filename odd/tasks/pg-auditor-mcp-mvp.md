@@ -15,7 +15,7 @@ Generic PostgreSQL MCP servers allow arbitrary SQL execution and lack specialize
 ## Actionable Checklist
 - [x] **T1**: Initialize Git repository, `package.json`, `tsconfig.json`, `vitest.config.ts`, `.gitignore`, and install dependencies. (verified: `npm install` added 162 packages, exit 0)
 - [x] **T2**: Implement SQL read-only safety validator (`src/db/safety.ts`) and read-only transaction pool wrapper (`src/db/pool.ts`) with unit tests. (verified: `test/safety.test.ts` 11/11 passed)
-- [ ] **T3**: Implement the 4 MCP tools (`explain_query`, `find_missing_indexes`, `suggest_index`, `get_slow_queries`) and MCP server registration (`src/server.ts`, `src/index.ts`) with unit tests.
+- [x] **T3**: Implement the 4 MCP tools (`explain_query`, `find_missing_indexes`, `suggest_index`, `get_slow_queries`) and MCP server registration (`src/server.ts`, `src/index.ts`) with unit tests. (verified: `npm run build` + `npm test` 21/21 passed; T1+T2 commit `58d7620`)
 - [ ] **T4**: Add `docker-compose.yml` + `docker/init.sql` (Postgres 16 + `pg_stat_statements` + unindexed sample tables) and comprehensive `README.md`, then run full build & test verification.
 
 ## Acceptance Criteria

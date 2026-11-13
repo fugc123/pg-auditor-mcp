@@ -77,7 +77,7 @@ export function validateReadOnlySql(rawSql: string): SqlValidationResult {
     return { valid: false, reason: 'No valid SQL keywords found.' };
   }
 
-  const firstKeyword = tokens[0];
+  const firstKeyword = tokens[0] ?? '';
   if (!ALLOWED_START_KEYWORDS.has(firstKeyword)) {
     return {
       valid: false,
